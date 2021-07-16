@@ -8,7 +8,7 @@ public class MyLinkedList {
 		this.head = null;
 		this.tail = null;
 	}
-	public void add(INode newNode) {
+	public void append(INode newNode) {
 		if(this.tail == null) {
 			this.tail = newNode;
 		}
@@ -17,9 +17,9 @@ public class MyLinkedList {
 		this.head = newNode;
 	}
 	else {
-		INode tempNode = this.head;
-		this.head = newNode;
-		this.head.setNext(tempNode);
+		INode tempNode = this.tail;
+		this.tail = newNode;
+		this.tail.setNext(tempNode);
 	}
 	}
 }
