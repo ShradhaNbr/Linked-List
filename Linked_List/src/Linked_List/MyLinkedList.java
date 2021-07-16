@@ -9,7 +9,7 @@ public class MyLinkedList {
 		this.tail = null;
 	}
 
-	public void add(INode newNode) { 
+	public void append(INode newNode) { 
 		if (this.tail == null) 
 			this.tail = newNode;
 
