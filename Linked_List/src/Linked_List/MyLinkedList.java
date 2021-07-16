@@ -9,7 +9,7 @@ public class MyLinkedList {
 		this.tail = null;
 	}
 
-	public void append(INode newNode) { 
+	public void add(INode newNode) { 
 		if (this.tail == null) 
 			this.tail = newNode;
 
@@ -21,6 +21,26 @@ public class MyLinkedList {
 			tail=newNode;
 			
 		}
+	}
+	public void append(INode newNode) { 
+		if (this.tail == null) 
+			this.tail = newNode;
+
+		if (this.head == null) 
+			this.head = newNode;
+		
+		else {
+			head.setNext(newNode);
+			head=newNode;
+			
+		}
+	}
+
+	public void insert(INode myNode, INode newNode) {
+		INode tempNode = myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
+		
 	}
 
 }

@@ -8,8 +8,8 @@ public class Linked_List {
 		MyNode<Integer> myThirdNode = new MyNode<>(70);
 		MyLinkedList myLinkedList = new MyLinkedList();
 		myLinkedList.append(myFirstNode);
-		myLinkedList.append(mySecondNode);
-		myLinkedList.append(myThirdNode);
+		myLinkedList.add(myThirdNode);
+		myLinkedList.insert(myFirstNode, mySecondNode);
 		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myThirdNode);
 		System.out.println(result);
 	}
