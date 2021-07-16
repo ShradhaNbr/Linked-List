@@ -12,5 +12,6 @@ public class Linked_List {
 		myLinkedList.insert(myFirstNode, mySecondNode);
 		myLinkedList.pop();
 		myLinkedList.display();
+		myLinkedList.search();
 	}
 }

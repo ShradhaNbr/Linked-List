@@ -53,6 +53,22 @@ public class MyLinkedList {
 		tail = tempNode;
 	}
 
+	public void search() {
+		if (head == null)
+			System.out.println("List is empty");
+		else {
+			INode currentNode = head;
+			while (currentNode != null) {
+				int position = 1;
+				position++;
+				if (currentNode.getKey().equals(30))
+					System.out.println("\nElement is present at " + position);
+				currentNode = currentNode.getNext();
+			}
+		}
+
+	}
+
 	public void display() {
 		INode currentNode = head;
 
