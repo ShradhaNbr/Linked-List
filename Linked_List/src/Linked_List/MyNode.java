@@ -1,11 +1,11 @@
 package Linked_List;
 
 public class MyNode<K> implements INode<K>{
-	private K key;
-	private INode next;
+	 K key;
+	 INode next;
 
 	public MyNode(K key) {
-		this.key = null;
+		this.key = key;
 		this.next = null;
 	}
 	
@@ -14,7 +14,7 @@ public class MyNode<K> implements INode<K>{
 	}
 	
 	@Override
-	public void setkey(K Key) {
+	public void setkey(K key) {
 		this.key = key;
 		}
 
@@ -25,4 +25,5 @@ public class MyNode<K> implements INode<K>{
 		public void setNext(INode next) {
 			this.next = next;
 		}
-	}
+		
+}

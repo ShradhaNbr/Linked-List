@@ -45,18 +45,26 @@ public class MyLinkedList {
 	}
 
 	public void pop() {
-		INode tempNode = this.head;
-		this.head = head.getNext();
+		INode tempNode = head;
+		while (tempNode.getNext() != tail) {
+			tempNode = tempNode.getNext();
+		}
+		tempNode.setNext(null);
+		tail = tempNode;
 	}
 
 	public void display() {
-		INode CurrentNode = head;
-		System.out.println("Linked List");
-		while (CurrentNode != null) {
-			System.out.println(CurrentNode.getKey() + " ");
-			CurrentNode = CurrentNode.getNext();
+		INode currentNode = head;
 
+		System.out.print("LinkedList: ");
+
+		while (currentNode != null) {
+			// Print the data at current node
+			System.out.print(currentNode.getKey() + " ");
+
+			// Go to next node
+			currentNode = currentNode.getNext();
 		}
-
 	}
+
 }
