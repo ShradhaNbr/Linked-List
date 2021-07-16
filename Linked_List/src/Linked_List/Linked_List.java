@@ -10,7 +10,7 @@ public class Linked_List {
 		myLinkedList.append(myFirstNode);
 		myLinkedList.add(myThirdNode);
 		myLinkedList.insert(myFirstNode, mySecondNode);
-		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myThirdNode);
-		System.out.println(result);
-	}
+		myLinkedList.pop();
+		myLinkedList.display();
+		}
 }
