@@ -45,6 +45,11 @@ public class MyLinkedList {
 	}
 
 	public void pop() {
+		INode tempNode = this.head;
+		this.head = head.getNext();
+	}
+
+	public void popLast() {
 		INode tempNode = head;
 		while (tempNode.getNext() != tail) {
 			tempNode = tempNode.getNext();
@@ -62,7 +67,8 @@ public class MyLinkedList {
 				int position = 1;
 				position++;
 				if (currentNode.getKey().equals(30))
-					System.out.println("\nElement is present at " + position);
+					System.out.println(
+							"\nSearched Element is " + currentNode.getKey() + " present at position " + position);
 				currentNode = currentNode.getNext();
 			}
 		}
@@ -81,6 +87,17 @@ public class MyLinkedList {
 			// Go to next node
 			currentNode = currentNode.getNext();
 		}
+	}
+
+	public void insertAfter(int key, int position) {
+		MyNode newNode = new MyNode(key);
+		MyNode previousNode = (MyNode) head;
+		for (int i = 0; i < position - 1; i++) {
+			previousNode = (MyNode) previousNode.next;
+		}
+		newNode.next = previousNode.next;
+		previousNode.next = newNode;
+		System.out.println("Element added is " + newNode.getKey() + " at position " + position);
 	}
 
 }

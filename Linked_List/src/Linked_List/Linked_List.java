@@ -10,8 +10,9 @@ public class Linked_List {
 		myLinkedList.append(myFirstNode);
 		myLinkedList.add(myThirdNode);
 		myLinkedList.insert(myFirstNode, mySecondNode);
-		myLinkedList.pop();
 		myLinkedList.display();
 		myLinkedList.search();
+		myLinkedList.insertAfter(40, 2);
+		myLinkedList.display();
 	}
 }
