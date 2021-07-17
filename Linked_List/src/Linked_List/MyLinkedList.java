@@ -67,8 +67,7 @@ public class MyLinkedList {
 				int position = 1;
 				position++;
 				if (currentNode.getKey().equals(30))
-					System.out.println(
-							"\nSearched Element is " + currentNode.getKey() + " present at position " + position);
+					System.out.println("Searched Element is " + currentNode.getKey() + " present at position " + position);
 				currentNode = currentNode.getNext();
 			}
 		}
@@ -78,7 +77,7 @@ public class MyLinkedList {
 	public void display() {
 		INode currentNode = head;
 
-		System.out.print("LinkedList: ");
+		System.out.print("LinkedList: \n");
 
 		while (currentNode != null) {
 			// Print the data at current node
@@ -100,4 +99,26 @@ public class MyLinkedList {
 		System.out.println("Element added is " + newNode.getKey() + " at position " + position);
 	}
 
+	public void popPositon(int position) {
+		MyNode tempNode = (MyNode) head;
+		if (position == 0) {
+			head = tempNode.next;
+		}
+		for (int i = 0; tempNode != null && i < position - 1; i++) {
+			tempNode = (MyNode) tempNode.next;
+		}
+		MyNode next = (MyNode) tempNode.next.getNext();
+		tempNode.next = next;
+		System.out.println("\nElement is deleted");
+	}
+
+	public void getCount() {
+		int count = 0;
+		INode tempNode = head;
+		while (tempNode != null) {
+			count++;
+			tempNode = tempNode.getNext();
+		}
+		System.out.println("LinkedList size is " + count);
+	}
 }
