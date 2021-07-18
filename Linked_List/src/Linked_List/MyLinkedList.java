@@ -66,8 +66,9 @@ public class MyLinkedList {
 			while (currentNode != null) {
 				int position = 1;
 				position++;
-				if (currentNode.getKey().equals(30))
-					System.out.println("Searched Element is " + currentNode.getKey() + " present at position " + position);
+				if (currentNode.getKey() == 30)
+					System.out.println(
+							"\nSearched Element is " + currentNode.getKey() + " present at position " + position);
 				currentNode = currentNode.getNext();
 			}
 		}
@@ -96,7 +97,7 @@ public class MyLinkedList {
 		}
 		newNode.next = previousNode.next;
 		previousNode.next = newNode;
-		System.out.println("Element added is " + newNode.getKey() + " at position " + position);
+		System.out.println("\nElement added is " + newNode.getKey() + " at position " + position);
 	}
 
 	public void popPositon(int position) {
@@ -120,5 +121,28 @@ public class MyLinkedList {
 			tempNode = tempNode.getNext();
 		}
 		System.out.println("LinkedList size is " + count);
+	}
+
+	public void sortList() {
+		MyNode current = (MyNode) head, index = null;
+		int temp;
+		if (head == null) {
+			System.out.println("List is empty");
+			return;
+		} else {
+			while (current != null) {
+				index = (MyNode) current.next;
+				while (index != null) {
+					if (current.key > (index.key)) {
+						temp = (int) current.key;
+						current.key = index.key;
+						index.key = temp;
+					}
+					index = (MyNode) index.next;
+				}
+				current = (MyNode) current.next;
+			}
+			System.out.println("\nLinked List after sorting ");
+		}
 	}
 }

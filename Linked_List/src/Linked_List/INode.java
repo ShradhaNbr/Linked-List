@@ -1,7 +1,7 @@
 package Linked_List;
 
 public interface INode<K> {
-	K getKey();
+	int getKey();
 
 	void setkey(K key);
 
